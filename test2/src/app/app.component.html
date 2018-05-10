@@ -1,0 +1,52 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>Angular 5 HttpClient Demo App</h1>
+  <hr>
+</div>
+<div>
+<h2>Add a Restaurant</h2><br>
+<p>Restaurant_ID: <input #myId type='text' [(ngModel)]="id"><p>
+  <br>
+<p>Resraurant_Name: <input #myName type='text' [(ngModel)]="name"></p><br>
+<p>Restaurant_Location: <input #myLocation type='text' [(ngModel)]="location"></p><br>
+<p>Cost_Of_Two: <input #myCost type='text' [(ngModel)]="cost"></p><br>
+<button type="submit" (click)="addRestaurant($event,myId.value,myName.value,myLocation.value,myCost.value)">Add Restaurant</button>
+<hr>
+</div>
+<div>
+  <h2>Delete a Restaurant</h2><br>
+  <p>Delete Restaurant by ID: <input #myDelete type="text" [(ngModel)] = "delt"></p><br>
+  <button type="submit" (click)= "deleteById($event,myDelete.value)">Delete by Id</button>
+<br>
+<!-- <p *ngFor="let item of res"> -->
+{{res.message}}
+  <hr>
+
+
+</div>
+<div>
+  <h2>Get a Restaurant</h2><br>
+    {{message}}
+    <br>
+  <input #myInput type="text" [(ngModel)]="message">
+  <br>
+  <button type="submit" (click)="getById($event,myInput.value)">Get by Id</button>
+  <button type="submit" (click)="getByName($event,myInput.value)">Get by Name</button>
+  <hr>
+  <p>Restaurant_ID: {{restaurant.id}}<p><br>
+  <p>Resraurant_Name: {{restaurant.restaurantName}}</p><br>
+  <p>Restaurant_Location: {{restaurant.restaurantLocation}}</p><br>
+  <p>Cost_Of_Two: {{restaurant.costOfTwo}}</p><br>
+<hr>
+</div>
+<div>
+  <h2> List of All Restaurants</h2><br>
+  <button type="submit" (click)="getAll()">Get All!!</button>
+
+  <ul>
+  <li *ngFor="let restaurant of all">
+  {{ restaurant.id +" "+ restaurant.restaurantName +" "+ restaurant.restaurantLocation+" "+restaurant.costOfTwo}}
+  </li>
+</ul>
+<hr>
+</div>

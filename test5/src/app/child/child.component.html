@@ -1,0 +1,9 @@
+<h3>
+  Child!
+</h3>
+<div>
+<p>Message</p><br>
+<input #myInput type="text" [(ngModel)]="message" (ngModelChange)="sendMessage()">
+<br>
+<button type="submit" (click)="submit(myInput.value)">Submit</button>
+</div>
